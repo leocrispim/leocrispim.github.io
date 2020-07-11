@@ -7,3 +7,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+const createIntersectionObserver = (elementId, className) => new IntersectionObserver((entries) => {
+    if(entries[0].isIntersecting === true) 
+        document.querySelector(`[href="${elementId}"]`).classList.add(className)
+    else
+        document.querySelector(`[href="${elementId}"]`).classList.remove(className)
+}, { threshold: [0.5] });
+
+const highlightedClassName = "highlighted-link";
+const firstFoldId = "#first-fold";
+const fourthFoldId = "#fourth-fold";
+const fifthFoldId = "#fifth-fold";
+
+const aboutFold = document.querySelector(firstFoldId);
+const projectsFold = document.querySelector(fourthFoldId);
+const contactFold = document.querySelector(fifthFoldId);
+
+const aboutFoldObserver = createIntersectionObserver(firstFoldId, highlightedClassName)
+const projectFoldObserver = createIntersectionObserver(fourthFoldId, highlightedClassName)
+const contactFoldObserver = createIntersectionObserver(fifthFoldId, highlightedClassName)
+
+aboutFoldObserver.observe(aboutFold);
+projectFoldObserver.observe(projectsFold);
+contactFoldObserver.observe(contactFold);
