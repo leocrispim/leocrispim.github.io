@@ -8,12 +8,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+const isMobile = window.innerWidth <= 600;
+const MOBILE_THRESHOLD = 0.25;
+const DESKTOP_THRESHOLD = 0.6;
+
+const threshold = isMobile ? MOBILE_THRESHOLD : DESKTOP_THRESHOLD;
+
 const createIntersectionObserver = (elementId, className) => new IntersectionObserver((entries) => {
     if(entries[0].isIntersecting === true) 
         document.querySelector(`[href="${elementId}"]`).classList.add(className)
     else
         document.querySelector(`[href="${elementId}"]`).classList.remove(className)
-}, { threshold: [0.5] });
+}, { threshold });
 
 const highlightedClassName = "highlighted-link";
 const firstFoldId = "#first-fold";

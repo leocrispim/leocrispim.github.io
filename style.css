@@ -24,6 +24,7 @@ header {
     background-color: transparent;
     color: #fff;
     z-index: 3;
+    width: 100%;
 }
 
 .logo {
@@ -78,7 +79,7 @@ header {
 
 #logos-n-links{
     position: absolute;
-    right: 32px;
+    right: 24px;
     top: 140px;
 }
 
@@ -354,7 +355,7 @@ header {
 
 /* Media queries */
 
-@media (max-width: 1023px) {
+@media only screen and (max-width: 1023px) {
     #introduction-card {
         width: 100%;
     }
@@ -364,11 +365,24 @@ header {
     }
 }
 
-@media (max-width: 599px) {
+@media only screen and (max-width: 599px) {
+    .logo {
+        display: none; 
+    }
+
+    .menu {
+        width: 100%;
+        padding: 0 24px;
+        justify-content: space-between;
+    }
+
+    .menu-item {
+        margin: 0;
+    }
+
     #introduction-content { 
         max-width: 100%;
-        padding-left: 24px;
-        padding-right: 72px;
+        padding: 104px 56px 48px 24px;
     }
 
     #second-fold{
@@ -377,8 +391,56 @@ header {
 
     #second-fold-content{
         max-width: 100%;
-        /* padding-left: 24px;
-        padding-right: 72px; */
+        flex-direction: column;
+        text-align: center;
     }
 
+    .second-fold-box {
+        width: 100%;
+        margin: 16px auto;
+    }
+
+    .fourth-fold-container {
+        flex-direction: column;
+    }
+
+    .fourth-fold-image-box {
+        margin: 24px auto;
+        width: 100%;
+    }
+
+    .fourth-fold-image-box > img {
+        margin: auto;
+    }
+
+    .fourth-fold-description-box {
+        margin: 24px auto;
+        text-align: center;
+    }
+
+    .fourth-fold-description-box > a {
+        margin: 8px auto;
+    }
+
+    .fourth-fold-image-box, .fourth-fold-description-box {
+        width: calc(100% - 48px);
+        padding: 0 24px;
+    }
+
+    #fifth-fold-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #fifth-fold-container > img {
+        margin: auto;
+    }
+
+    #fifth-fold-image-box {
+        margin: 0;
+    }
+
+    #fifth-fold-description-box {
+        padding: 0 24px;
+    }
 }
