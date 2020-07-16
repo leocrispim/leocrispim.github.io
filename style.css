@@ -3,6 +3,8 @@ body {
     display:grid;
     gap: 12px;
     font-family: 'Montserrat', sans-serif;
+    
+    width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, span {
@@ -19,7 +21,6 @@ header {
     align-items: center;
     position: fixed;
     top: 0;
-    width: 100%;
     background-color: transparent;
     color: #fff;
     z-index: 3;
@@ -351,11 +352,6 @@ header {
 }
 
 
-
-
-
-
-
 /* Media queries */
 
 @media (max-width: 1023px) {
@@ -374,4 +370,15 @@ header {
         padding-left: 24px;
         padding-right: 72px;
     }
+
+    #second-fold{
+        padding-bottom: 60px;
+    }
+
+    #second-fold-content{
+        max-width: 100%;
+        /* padding-left: 24px;
+        padding-right: 72px; */
+    }
+
 }
