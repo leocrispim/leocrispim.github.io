@@ -15,7 +15,7 @@ const DESKTOP_THRESHOLD = 0.6;
 const threshold = isMobile ? MOBILE_THRESHOLD : DESKTOP_THRESHOLD;
 
 const createIntersectionObserver = (elementId, className) => new IntersectionObserver((entries) => {
-    if(entries[0].isIntersecting === true) 
+    if(entries[0].isIntersecting === true && isMobile) 
         document.querySelector(`[href="${elementId}"]`).classList.add(className)
     else
         document.querySelector(`[href="${elementId}"]`).classList.remove(className)
