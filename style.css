@@ -129,6 +129,7 @@ header {
     border-left: solid 2.5px white;
     padding-left: 6px;
     margin-right: 8px;
+    line-height: 30px;
   }
 
 #CV-Button{
