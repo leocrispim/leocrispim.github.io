@@ -21,7 +21,7 @@ header {
     align-items: center;
     position: fixed;
     top: 0;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     z-index: 3;
     width: 100%;
@@ -50,6 +50,7 @@ header {
 
 .menu-item > a {
     text-decoration: none;
+    font-weight: bold;
 }
 
 #first-fold {
